@@ -1,11 +1,11 @@
+// src/theme/ThemeContext.tsx
 import React, { createContext, useState, useMemo, useContext, useEffect } from 'react';
-import { ThemeProvider as MuiThemeProvider, CssBaseline, Theme } from '@mui/material';
-import { lightTheme, darkTheme } from './themes';
-
-type ThemeMode = 'light' | 'dark';
+import { ThemeProvider as MuiThemeProvider, CssBaseline } from '@mui/material';
+import type { Theme, PaletteMode } from '@mui/material/styles'; // PaletteMode importado
+import { lightTheme, darkTheme } from './theme';
 
 interface ThemeContextType {
-  themeMode: ThemeMode;
+  themeMode: PaletteMode; // Alterado para PaletteMode
   toggleTheme: () => void;
 }
 
@@ -24,15 +24,22 @@ interface AppThemeProviderProps {
 }
 
 export const AppThemeProvider: React.FC<AppThemeProviderProps> = ({ children }) => {
-  const [themeMode, setThemeMode] = useState<ThemeMode>('light');
+  const [themeMode, setThemeMode] = useState<PaletteMode>('light'); // Alterado para PaletteMode
 
   const toggleTheme = () => {
     setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
   };
 
   const [muiTheme, componentsCss] = useMemo((): [Theme, string] => {
-    const theme = themeMode === 'light' ? lightTheme : darkTheme;
-    return [theme, theme.componentsCss || '']; // componentsCss handled separately
+    const currentTheme = themeMode === 'light' ? lightTheme : darkTheme;
+    // Acessando componentsCss. Como CustomTheme estende Theme,
+    // e lightTheme/darkTheme são do tipo CustomTheme,
+    // esta propriedade deve estar acessível.
+    // A asserção (currentTheme as any) é uma forma de contornar verificações estritas
+    // se CustomTheme não for perfeitamente inferido pelo TypeScript em todos os contextos,
+    // mas idealmente, com lightTheme/darkTheme tipados como CustomTheme, não seria necessário.
+    const cssString = currentTheme.componentsCss || '';
+    return [currentTheme, cssString];
   }, [themeMode]);
 
   useEffect(() => {
