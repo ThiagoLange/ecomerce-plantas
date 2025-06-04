@@ -1,17 +1,10 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import CssBaseline from '@mui/material/CssBaseline';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import { AppThemeProvider } from './contexts/ThemeContext'; // Importar o novo provider
-import './index.css';
-// Não precisamos mais do createTheme e ThemeProvider do MUI aqui,
-// pois o AppThemeProvider cuidará disso.
+// import './index.css'; // Remova ou ajuste se não for usar estilos globais aqui
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <AppThemeProvider> {/* Usar o AppThemeProvider */}
-      <CssBaseline /> {/* CssBaseline ajuda a normalizar e aplicar o background do tema */}
-      <App />
-    </AppThemeProvider>
-  </StrictMode>,
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );

@@ -1,9 +1,0 @@
-.gridContainer {
-  /* Estilos adicionais para o container do grid, se necessário */
-  /* Por exemplo, max-width ou margin auto para centralizar */
-  margin: 0 auto;
-  max-width: 1200px; /* Um exemplo de max-width */
-}
-
-/* Você pode adicionar estilos para garantir que os cards se comportem bem dentro do grid,
-   embora o PlantCard já tenha uma largura definida, o grid deve gerenciá-los. */

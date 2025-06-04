@@ -1,10 +1,13 @@
 import React from 'react';
-import PlantStore from '../src/components/pages/PlantStore'; // Importe a nova página da loja
+import PlantStore from './pages/PlantStore/PlantStore';
+import { AppThemeProvider } from './theme/ThemeContext';
 
 function App() {
-  // O AppThemeProvider e CssBaseline já estão em main.tsx,
-  // então PlantStore terá acesso ao contexto do tema.
-  return <PlantStore />;
+  return (
+    <AppThemeProvider>
+      <PlantStore />
+    </AppThemeProvider>
+  );
 }
 
 export default App;

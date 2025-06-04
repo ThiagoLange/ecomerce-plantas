@@ -5,12 +5,12 @@ interface PriceTagProps {
 }
 
 const PriceTag: React.FC<PriceTagProps> = ({ value }) => {
-  const formattedPrice = value.toLocaleString('pt-BR', {
+  const formattedPrice = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL',
-  });
+  }).format(value);
 
-  return <span>{formattedPrice}</span>;
+  return <span style={{ fontWeight: 'bold', fontSize: '1.2em' }}>{formattedPrice}</span>;
 };
 
 export default PriceTag;

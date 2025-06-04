@@ -1,0 +1,7 @@
+/* src/components/templates/StoreLayout/StoreLayout.module.css */
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* A cor de fundo principal será definida pelo CssBaseline e background.default do tema */
+}
