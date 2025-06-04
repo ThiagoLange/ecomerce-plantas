@@ -1,66 +1,87 @@
+// src/pages/PlantStore/PlantStore.tsx
 import React from 'react';
 import StoreLayout from '../../components/templates/StoreLayout/StoreLayout';
 import PlantGrid from '../../components/organisms/PlantGrid/PlantGrid';
 import type { Plant } from '../../types';
-import { Typography, Paper } from '@mui/material'; // MODIFICADO AQUI: Box foi removido
+import { Typography, Paper } from '@mui/material';
 
-// Dados mockados das plantas
+// Importe suas imagens da pasta assets
+// Certifique-se de que os caminhos e nomes dos arquivos estão corretos.
+// Estes são exemplos, substitua pelos nomes reais dos seus arquivos.
+import samambaiaAmericanaImg from '../../assets/samambaia-americana.jpeg';
+import cactoBolaImg from '../../assets/cacto-bola.jpeg';
+import orquideaPhalaenopsisImg from '../../assets/orquidea-phalaenopsis.jpeg';
+import girassolAnaoImg from '../../assets/girassol-anao.jpeg';
+import suculentaEcheveriaImg from '../../assets/suculenta-echeveria.jpeg';
+import espadaSaoJorgeImg from '../../assets/espada-sao-jorge.jpeg';
+import roseiraMiniaturaImg from '../../assets/roseira-miniatura.jpeg';
+import jiboiaImg from '../../assets/jiboia.jpeg';
+
+// Dados mockados das plantas com as imagens importadas
 const mockPlants: Plant[] = [
   {
     id: '1',
     name: 'Samambaia Americana',
     price: 45.90,
     light: 'shade',
-    image: 'https://source.unsplash.com/random/400x300?fern',
+    image: samambaiaAmericanaImg, // Use a variável importada
   },
   {
     id: '2',
     name: 'Cacto Bola',
     price: 29.99,
     light: 'sun',
-    image: 'https://source.unsplash.com/random/400x300?cactus',
+    image: cactoBolaImg, // Use a variável importada
   },
   {
     id: '3',
     name: 'Orquídea Phalaenopsis',
     price: 79.50,
     light: 'shade',
-    image: 'https://source.unsplash.com/random/400x300?orchid',
+    image: orquideaPhalaenopsisImg, // Use a variável importada
   },
   {
     id: '4',
     name: 'Girassol Anão',
     price: 15.00,
     light: 'sun',
-    image: 'https://source.unsplash.com/random/400x300?sunflower',
+    image: girassolAnaoImg, // Use a variável importada
   },
   {
     id: '5',
     name: 'Suculenta Echeveria',
     price: 22.00,
     light: 'sun',
-    image: 'https://source.unsplash.com/random/400x300?succulent',
+    image: suculentaEcheveriaImg, // Use a variável importada
   },
   {
     id: '6',
     name: 'Espada de São Jorge',
     price: 35.75,
     light: 'shade',
-    image: 'https://source.unsplash.com/random/400x300?snakeplant',
+    image: espadaSaoJorgeImg, // Use a variável importada
   },
   {
     id: '7',
     name: 'Roseira Miniatura',
     price: 55.00,
     light: 'sun',
-    image: 'https://source.unsplash.com/random/400x300?rose',
+    image: roseiraMiniaturaImg, // Use a variável importada
   },
   {
     id: '8',
     name: 'Jiboia (Hera do Diabo)',
     price: 32.50,
     light: 'shade',
-    image: 'https://source.unsplash.com/random/400x300?pothos',
+    image: jiboiaImg, // Use a variável importada
+  },
+  // Exemplo sem imagem para testar o placeholder
+  {
+    id: '9',
+    name: 'Planta Misteriosa ??',
+    price: 19.99,
+    light: 'shade',
+    // image: undefined, // ou omita a propriedade 'image'
   },
 ];
 
