@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid'; // ✅ Default import
+import Grid from '@mui/material/Grid';
 import { useMediaQuery } from '@mui/material';
 import type { Theme, GridSize } from '@mui/material';
 import PlantCard from '../../molecules/PlantCard/PlantCard';

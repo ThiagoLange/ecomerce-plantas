@@ -10,7 +10,7 @@
 }
 
 .primary {
-  background-color: var(--button-primary-bg, #0a3007); /* Cor padrão se a variável não estiver definida */
+  background-color: var(--button-primary-bg, #0a3007);
   color: var(--button-primary-text, #e1d1c8);
 }
 
@@ -19,7 +19,7 @@
 }
 
 .secondary {
-  background-color: var(--button-secondary-bg, #c2a39a); /* Cor padrão se a variável não estiver definida */
+  background-color: var(--button-secondary-bg, #c2a39a);
   color: var(--button-secondary-text, #001600);
   border: 1px solid var(--button-secondary-border, #0a3007);
 }

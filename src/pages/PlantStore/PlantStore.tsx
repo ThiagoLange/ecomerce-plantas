@@ -5,9 +5,6 @@ import PlantGrid from '../../components/organisms/PlantGrid/PlantGrid';
 import type { Plant } from '../../types';
 import { Typography, Paper } from '@mui/material';
 
-// Importe suas imagens da pasta assets
-// Certifique-se de que os caminhos e nomes dos arquivos estão corretos.
-// Estes são exemplos, substitua pelos nomes reais dos seus arquivos.
 import samambaiaAmericanaImg from '../../assets/samambaia-americana.jpeg';
 import cactoBolaImg from '../../assets/cacto-bola.jpeg';
 import orquideaPhalaenopsisImg from '../../assets/orquidea-phalaenopsis.jpeg';
@@ -31,49 +28,49 @@ const mockPlants: Plant[] = [
     name: 'Cacto Bola',
     price: 29.99,
     light: 'sun',
-    image: cactoBolaImg, // Use a variável importada
+    image: cactoBolaImg,
   },
   {
     id: '3',
     name: 'Orquídea Phalaenopsis',
     price: 79.50,
     light: 'shade',
-    image: orquideaPhalaenopsisImg, // Use a variável importada
+    image: orquideaPhalaenopsisImg,
   },
   {
     id: '4',
     name: 'Girassol Anão',
     price: 15.00,
     light: 'sun',
-    image: girassolAnaoImg, // Use a variável importada
+    image: girassolAnaoImg,
   },
   {
     id: '5',
     name: 'Suculenta Echeveria',
     price: 22.00,
     light: 'sun',
-    image: suculentaEcheveriaImg, // Use a variável importada
+    image: suculentaEcheveriaImg,
   },
   {
     id: '6',
     name: 'Espada de São Jorge',
     price: 35.75,
     light: 'shade',
-    image: espadaSaoJorgeImg, // Use a variável importada
+    image: espadaSaoJorgeImg,
   },
   {
     id: '7',
     name: 'Roseira Miniatura',
     price: 55.00,
     light: 'sun',
-    image: roseiraMiniaturaImg, // Use a variável importada
+    image: roseiraMiniaturaImg,
   },
   {
     id: '8',
     name: 'Jiboia (Hera do Diabo)',
     price: 32.50,
     light: 'shade',
-    image: jiboiaImg, // Use a variável importada
+    image: jiboiaImg,
   },
   // Exemplo sem imagem para testar o placeholder
   {
@@ -81,7 +78,6 @@ const mockPlants: Plant[] = [
     name: 'Planta Misteriosa ??',
     price: 19.99,
     light: 'shade',
-    // image: undefined, // ou omita a propriedade 'image'
   },
 ];
 

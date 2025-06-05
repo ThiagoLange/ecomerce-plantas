@@ -4,7 +4,7 @@ import PriceTag from '../../atoms/PriceTag/PriceTag';
 import PlantIcon from '../../atoms/PlantIcon/PlantIcon';
 import Button from '../../atoms/Button/Button';
 import styles from './PlantCard.module.css';
-import type { Plant } from '../../../types'; // <<< GARANTA QUE ESTA LINHA ESTEJA ASSIM
+import type { Plant } from '../../../types';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 

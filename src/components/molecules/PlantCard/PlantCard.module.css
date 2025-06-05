@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  border-radius: 8px !important; /* Exemplo de !important se necessário para sobrescrever MUI */
+  border-radius: 8px !important;
 }
 
 .card:hover {

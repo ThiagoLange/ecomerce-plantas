@@ -5,7 +5,7 @@ import type { Theme, PaletteMode } from '@mui/material/styles'; // PaletteMode i
 import { lightTheme, darkTheme } from './theme';
 
 interface ThemeContextType {
-  themeMode: PaletteMode; // Alterado para PaletteMode
+  themeMode: PaletteMode;
   toggleTheme: () => void;
 }
 
@@ -24,7 +24,7 @@ interface AppThemeProviderProps {
 }
 
 export const AppThemeProvider: React.FC<AppThemeProviderProps> = ({ children }) => {
-  const [themeMode, setThemeMode] = useState<PaletteMode>('light'); // Alterado para PaletteMode
+  const [themeMode, setThemeMode] = useState<PaletteMode>('light');
 
   const toggleTheme = () => {
     setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
@@ -32,12 +32,7 @@ export const AppThemeProvider: React.FC<AppThemeProviderProps> = ({ children }) 
 
   const [muiTheme, componentsCss] = useMemo((): [Theme, string] => {
     const currentTheme = themeMode === 'light' ? lightTheme : darkTheme;
-    // Acessando componentsCss. Como CustomTheme estende Theme,
-    // e lightTheme/darkTheme são do tipo CustomTheme,
-    // esta propriedade deve estar acessível.
-    // A asserção (currentTheme as any) é uma forma de contornar verificações estritas
-    // se CustomTheme não for perfeitamente inferido pelo TypeScript em todos os contextos,
-    // mas idealmente, com lightTheme/darkTheme tipados como CustomTheme, não seria necessário.
+   
     const cssString = currentTheme.componentsCss || '';
     return [currentTheme, cssString];
   }, [themeMode]);

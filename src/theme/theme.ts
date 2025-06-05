@@ -1,5 +1,5 @@
 // src/theme/theme.ts
-import { createTheme } from '@mui/material/styles'; // Removido ThemeOptions daqui
+import { createTheme } from '@mui/material/styles';
 import type { ThemeOptions, Theme } from '@mui/material/styles'; // ADICIONADO type para ThemeOptions e Theme
 
 const lightPalette = {
@@ -54,7 +54,6 @@ const commonComponents: ThemeOptions['components'] = {
   },
 };
 
-// Definindo uma interface que estende Theme para incluir componentsCss
 interface CustomTheme extends Theme {
   componentsCss?: string;
 }
@@ -63,7 +62,7 @@ interface CustomThemeOptions extends ThemeOptions {
   componentsCss?: string;
 }
 
-export const lightTheme: CustomTheme = createTheme({ // Adicionado tipo CustomTheme
+export const lightTheme: CustomTheme = createTheme({
   palette: {
     mode: 'light',
     ...lightPalette,
@@ -82,7 +81,7 @@ export const lightTheme: CustomTheme = createTheme({ // Adicionado tipo CustomTh
       --button-secondary-hover-bg: ${lightPalette.background.default};
     }
   `,
-} as CustomThemeOptions); // A asserção de tipo aqui está correta para o objeto literal
+} as CustomThemeOptions);
 
 export const darkTheme: CustomTheme = createTheme({ // Adicionado tipo CustomTheme
   palette: {
@@ -103,4 +102,4 @@ export const darkTheme: CustomTheme = createTheme({ // Adicionado tipo CustomThe
       --button-secondary-hover-bg: ${darkPalette.background.default};
     }
   `,
-} as CustomThemeOptions); // A asserção de tipo aqui está correta para o objeto literal
+} as CustomThemeOptions);
